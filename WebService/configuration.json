@@ -1,0 +1,5 @@
+﻿{
+  # Base url for hosting the REST service
+  "BaseUrl": "http://localhost", 
+  "Port" :  9013 
+}
