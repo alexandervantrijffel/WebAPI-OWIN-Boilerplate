@@ -21,7 +21,7 @@ opened with the default URL and port at http://localhost:9013/api/testrest in th
 Supported operations:  
   
 Operation | Description  
----- | -------------  
+--------- | -------------  
 GET /api/testrest | Get all values  
 GET /api/testrest/1 | Get value with id 1  
 POST /api/testrest { "value":"My new value" } | Create new value, the service returns the URL of the new resource as { "url":"http://localhost:9013/api/testrest/newid" }  
