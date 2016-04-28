@@ -58,7 +58,7 @@ The service will be installed with service name WebApiOwinBoilerplateService. Th
 with the command:
 
 ```
-Structura.WebApiOwinBoilerPlate.WebService.exe install
+Structura.WebApiOwinBoilerPlate.WebService.exe uninstall
 ```
 
 Alexander van Trijffel
