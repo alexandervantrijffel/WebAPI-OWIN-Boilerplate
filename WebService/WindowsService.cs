@@ -17,7 +17,8 @@ namespace Structura.WebApiOwinBoilerPlate.WebService
 #if DEBUG
             try
             {
-                System.Diagnostics.Process.Start(so.Urls.First() + "/api/testrest");
+                System.Diagnostics.Process.Start(so.Urls.First().Replace("+:", "127.0.0.1") 
+					+ "/api/testrest");
             }
             catch (Exception)
             { }
