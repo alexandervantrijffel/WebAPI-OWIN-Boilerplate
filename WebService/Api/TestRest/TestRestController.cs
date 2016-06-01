@@ -42,7 +42,7 @@ namespace Structura.WebApiOwinBoilerPlate.WebService.Api.TestRest
         {
             var newValue = _values.Create(args.Value);
             return Request.CreateResponse(HttpStatusCode.Created,
-                new { Url = JsonConfigAccessor.Config.FullHostUrl + $"/api/testrest/{newValue.Key}" });
+                new { Url = JsonConfigAccessor.Config.FullHostUrls.First() + $"/api/testrest/{newValue.Key}" });
         }
 
         [Route("{id:int}")]

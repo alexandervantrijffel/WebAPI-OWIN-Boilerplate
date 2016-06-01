@@ -1,5 +1,5 @@
 ﻿{
-  # Base url for hosting the REST service
-  "BaseUrl": "http://localhost", 
+  # Base urls for hosting the REST service
+  "BaseUrls": [ "http://localhost", "http://127.0.0.1" ],
   "Port" :  9013 
 }

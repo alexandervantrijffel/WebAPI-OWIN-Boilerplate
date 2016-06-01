@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using CuttingEdge.Conditions;
 
 namespace Structura.WebApiOwinBoilerPlate.WebService.JsonConfiguration
@@ -7,15 +9,15 @@ namespace Structura.WebApiOwinBoilerPlate.WebService.JsonConfiguration
     /// </summary>
     public class WebServiceConfig
     {
-        public string BaseUrl { get; set; }
+        public string[] BaseUrls { get; set; }
         public int? Port { get; set; }
 
-        public string FullHostUrl
+        public IEnumerable<string> FullHostUrls
         {
             get
             {
                 var portArg = Port.HasValue ? ":" + Port : string.Empty;
-                return $"{BaseUrl}{portArg}";
+	            return BaseUrls.Select(b => b + portArg);
             }
         }
 
@@ -25,9 +27,11 @@ namespace Structura.WebApiOwinBoilerPlate.WebService.JsonConfiguration
 
         public WebServiceConfig(dynamic config)
         {
-            Condition.Requires(config.BaseUrl as string).IsNotNullOrEmpty(
-                "Required BaseUrl setting not found in configuration file.");
-            BaseUrl = config.BaseUrl;
+			Condition.Requires((string[])config.BaseUrls).IsNotNull(
+				"Required BaseUrls configuration file setting is not found.");
+			Condition.Requires((string[])config.BaseUrls).IsNotEmpty(
+                "Required BaseUrls configuration file setting is empty.");
+            BaseUrls = config.BaseUrls;
             Port = config.Port;
         }
     }
