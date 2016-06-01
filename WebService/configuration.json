@@ -1,5 +1,7 @@
 ﻿{
   # Base urls for hosting the REST service
-  "BaseUrls": [ "http://localhost", "http://127.0.0.1" ],
+  "BaseUrls": [ "http://+80" ],
+    # (execute the following command to grant the right to DOMAIN\USER to host the service):
+	# netsh http add urlacl url=http://+9156/ user=DOMAIN\USER listen=yes
   "Port" :  9013 
 }
