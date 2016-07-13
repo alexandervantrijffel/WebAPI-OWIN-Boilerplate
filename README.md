@@ -61,4 +61,5 @@ with the command:
 Structura.WebApiOwinBoilerPlate.WebService.exe uninstall
 ```
 
-Alexander van Trijffel
+Maintained by Alexander van Trijffel of [Structura](http://structura.ws)
+
