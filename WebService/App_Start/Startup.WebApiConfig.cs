@@ -28,8 +28,11 @@ namespace Structura.WebApiOwinBoilerPlate.WebService
             // Use camel case for JSON data.
             configuration.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
+            configuration.Formatters.JsonFormatter.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+
             configuration.Filters.Add(new ExceptionLogger());
             configuration.Filters.Add(new ModelStateValidation());
+
             appBuilder.UseWebApi(configuration);
             configuration.EnsureInitialized();
         }
